@@ -60,80 +60,284 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 
 <p><strong>Variable Descriptions</strong></p>
-<p>subjects - Study participant ID number, ranging from 1 - 30</p>
-<p>activityName - Type of activity being measured</p>
-<pre><code>    LAYING
-    SITTING
-    STANDING
-    WALKING
-    WALKING_DOWNSTAIRS
-    WALKING_UPSTAIRS
-    </code></pre>
-<p>avg- tBodyAcc-mean()-X -Average value of body acceleration signal in the x direction (time domain)</p>
-<p>avg- tBodyAcc-mean()-Y Average value of body acceleration signal in the y direction (time domain)</p>
-<p>avg- tBodyAcc-mean()-Z Average value of body acceleration signal in the z direction (time domain)</p>
-<p>avg- tGravityAcc-mean()-X Average value of gravity acceleration signal in the x direction (time domain)</p>
-<p>avg- tGravityAcc-mean()-Y Average value of gravity acceleration signal in the y direction (time domain)</p>
-<p>avg- tGravityAcc-mean()-Z Average value of gravity acceleration signal in the z direction (time domain)</p>
-<p>avg- tBodyAccJerk-mean()-X Average value of jerk acceleration signal in the x direction (time domain)</p>
-<p>avg- tBodyAccJerk-mean()-Y Average value of jerk acceleration signal in the y direction (time domain)</p>
-<p>avg- tBodyAccJerk-mean()-Z Average value of jerk acceleration signal in the z direction (time domain)</p>
-<p>avg- tBodyGyro-mean()-X Average value of body gyroscope signal in the x direction (time domain)</p>
-<p>avg- tBodyGyro-mean()-Y Average value of body gyroscope signal in the y direction (time domain)</p>
-<p>avg- tBodyGyro-mean()-Z Average value of body gyroscope signal in the z direction (time domain)</p>
-<p>avg- tBodyGyroJerk-mean()-X Average value of jerk gyroscope signal in the x direction (time domain)</p>
-<p>avg- tBodyGyroJerk-mean()-Y Average value of body gyroscope signal in the y direction (time domain)</p>
-<p>avg- tBodyGyroJerk-mean()-Z Average value of body gyroscope signal in the z direction (time domain)</p>
-<p>avg- tBodyAccMag-mean() Average magintude of body acceleration signal calculated using the Euclidian norm (time domain)</p>
-<p>avg- tGravityAccMag-mean() Average magintude of gravity acceleration signal calculated using the Euclidian norm (time domain)</p>
-<p>avg- tBodyAccJerkMag-mean() Average magintude of jerk acceleration signal calculated using the Euclidian norm (time domain)</p>
-<p>avg- tBodyGyroMag-mean() Average magintude of body gyroscope signal calculated using the Euclidian norm (time domain)</p>
-<p>avg- tBodyGyroJerkMag-mean() Average magintude of jerk gyroscope signal calculated using the Euclidian norm (time domain)</p>
-<p>avg- fBodyAcc-mean()-X Average value of body acceleration signal in the x direction (frequency domain)</p>
-<p>avg- fBodyAcc-mean()-Y Average value of body acceleration signal in the y direction (frequency domain)</p>
-<p>avg- fBodyAcc-mean()-Z Average value of body acceleration signal in the z direction (frequency domain)</p>
-<p>avg- fBodyAccJerk-mean()-X Average value of jerk acceleration signal in the x direction (frequency domain)</p>
-<p>avg- fBodyAccJerk-mean()-Y Average value of jerk acceleration signal in the y direction (frequency domain)</p>
-<p>avg- fBodyAccJerk-mean()-Z Average value of jerk acceleration signal in the z direction (frequency domain)</p>
-<p>avg- fBodyGyro-mean()-X Average value of body gyroscope signal in the x direction (frequency domain)</p>
-<p>avg- fBodyGyro-mean()-Y Average value of body gyroscope signal in the y direction (frequency domain)</p>
-<p>avg- fBodyGyro-mean()-Z Average value of body gyroscope signal in the z direction (frequency domain)</p>
-<p>avg- fBodyAccMag-mean() Average magintude of body acceleration signal calculated using the Euclidian norm (frequency domain)</p>
-<p>avg- fBodyBodyAccJerkMag-mean() Average magintude of jerk acceleration signal calculated using the Euclidian norm (frequency domain)</p>
-<p>avg- fBodyBodyGyroMag-mean() Average magintude of body gyroscope signal calculated using the Euclidian norm (frequency domain)</p>
-<p>avg- fBodyBodyGyroJerkMag-mean() Average magintude of jerk gyroscope signal calculated using the Euclidian norm (frequency domain) ————— avg- tBodyAcc-std()-X Average standard deviation of body acceleration signal in the x direction (time domain)</p>
-<p>avg- tBodyAcc-std()-Y Average standard deviation of body acceleration signal in the y direction (time domain)</p>
-<p>avg- tBodyAcc-std()-Z Average standard deviation of body acceleration signal in the z direction (time domain)</p>
-<p>avg- tGravityAcc-std()-X Average standard deviation of gravity acceleration signal in the x direction (time domain)</p>
-<p>avg- tGravityAcc-std()-Y Average standard deviation of gravity acceleration signal in the y direction (time domain)</p>
-<p>avg- tGravityAcc-std()-Z Average standard deviation of gravity acceleration signal in the z direction (time domain)</p>
-<p>avg- tBodyAccJerk-std()-X Average standard deviation of jerk acceleration signal in the x direction (time domain)</p>
-<p>avg- tBodyAccJerk-std()-Y Average standard deviation of jerk acceleration signal in the y direction (time domain)</p>
-<p>avg- tBodyAccJerk-std()-Z Average standard deviation of jerk acceleration signal in the z direction (time domain)</p>
-<p>avg- tBodyGyro-std()-X Average standard deviation of body gyroscope signal in the x direction (time domain)</p>
-<p>avg- tBodyGyro-std()-Y Average standard deviation of body gyroscope signal in the y direction (time domain)</p>
-<p>avg- tBodyGyro-std()-Z Average standard deviation of body gyroscope signal in the z direction (time domain)</p>
-<p>avg- tBodyGyroJerk-std()-X Average standard deviation of jerk gyroscope signal in the x direction (time domain)</p>
-<p>avg- tBodyGyroJerk-std()-Y Average standard deviation of body gyroscope signal in the y direction (time domain)</p>
-<p>avg- tBodyGyroJerk-std()-Z Average standard deviation of body gyroscope signal in the z direction (time domain)</p>
-<p>avg- tBodyAccMag-std() Average standard deviation magintude of body acceleration signal calculated using the Euclidian norm (time domain)</p>
-<p>avg- tGravityAccMag-std() Average standard deviation magintude of gravity acceleration signal calculated using the Euclidian norm (time domain)</p>
-<p>avg- tBodyAccJerkMag-std() Average standard deviation magintude of jerk acceleration signal calculated using the Euclidian norm (time domain)</p>
-<p>avg- tBodyGyroMag-std() Average standard deviation magintude of body gyroscope signal calculated using the Euclidian norm (time domain)</p>
-<p>avg- tBodyGyroJerkMag-std() Average standard deviation magintude of jerk gyroscope signal calculated using the Euclidian norm (time domain)</p>
-<p>avg- fBodyAcc-std()-X Average standard deviation of body acceleration signal in the x direction (frequency domain)</p>
-<p>avg- fBodyAcc-std()-Y Average standard deviation of body acceleration signal in the y direction (frequency domain)</p>
-<p>avg- fBodyAcc-std()-Z Average standard deviation of body acceleration signal in the z direction (frequency domain)</p>
-<p>avg- fBodyAccJerk-std()-X Average standard deviation of jerk acceleration signal in the x direction (frequency domain)</p>
-<p>avg- fBodyAccJerk-std()-Y Average standard deviation of jerk acceleration signal in the y direction (frequency domain)</p>
-<p>avg- fBodyAccJerk-std()-Z Average standard deviation of jerk acceleration signal in the z direction (frequency domain)</p>
-<p>avg- fBodyGyro-std()-X Average standard deviation of body gyroscope signal in the x direction (frequency domain)</p>
-<p>avg- fBodyGyro-std()-Y Average standard deviation of body gyroscope signal in the y direction (frequency domain)</p>
-<p>avg- fBodyGyro-std()-Z Average standard deviation of body gyroscope signal in the z direction (frequency domain)</p>
-<p>avg- fBodyAccMag-std() Average standard deviation magintude of body acceleration signal calculated using the Euclidian norm (frequency domain)</p>
-<p>avg- fBodyBodyAccJerkMag-std() Average standard deviation magintude of jerk acceleration signal calculated using the Euclidian norm (frequency domain)</p>
-<p>avg- fBodyBodyGyroMag-std() Average standard deviation magintude of body gyroscope signal calculated using the Euclidian norm (frequency domain)</p>
-<p>avg- fBodyBodyGyroJerkMag-std() Average standard deviation magintude of jerk gyroscope signal calculated using the Euclidian norm (frequency domain)</p>
+<p>subjects</p>
+<ul>
+<li>Study participant ID number, ranging from 1 - 30</li>
+</ul>
+<p>activityName</p>
+<ul>
+<li><p>type of activity being measured</p>
+<pre><code>LAYING
+SITTING
+STANDING
+WALKING
+WALKING_DOWNSTAIRS
+WALKING_UPSTAIRS</code></pre></li>
+</ul>
+<p>avg- tBodyAcc-mean()-X</p>
+<ul>
+<li>Average value of body acceleration signal in the x direction (time domain)</li>
+</ul>
+<p>avg- tBodyAcc-mean()-Y</p>
+<ul>
+<li>Average value of body acceleration signal in the y direction (time domain)</li>
+</ul>
+<p>avg- tBodyAcc-mean()-Z</p>
+<ul>
+<li>Average value of body acceleration signal in the z direction (time domain)</li>
+</ul>
+<p>avg- tGravityAcc-mean()-X</p>
+<ul>
+<li>Average value of gravity acceleration signal in the x direction (time domain)</li>
+</ul>
+<p>avg- tGravityAcc-mean()-Y</p>
+<ul>
+<li>Average value of gravity acceleration signal in the y direction (time domain)</li>
+</ul>
+<p>avg- tGravityAcc-mean()-Z</p>
+<ul>
+<li>Average value of gravity acceleration signal in the z direction (time domain)</li>
+</ul>
+<p>avg- tBodyAccJerk-mean()-X</p>
+<ul>
+<li>Average value of jerk acceleration signal in the x direction (time domain)</li>
+</ul>
+<p>avg- tBodyAccJerk-mean()-Y</p>
+<ul>
+<li>Average value of jerk acceleration signal in the y direction (time domain)</li>
+</ul>
+<p>avg- tBodyAccJerk-mean()-Z</p>
+<ul>
+<li>Average value of jerk acceleration signal in the z direction (time domain)</li>
+</ul>
+<p>avg- tBodyGyro-mean()-X</p>
+<ul>
+<li>Average value of body gyroscope signal in the x direction (time domain)</li>
+</ul>
+<p>avg- tBodyGyro-mean()-Y</p>
+<ul>
+<li>Average value of body gyroscope signal in the y direction (time domain)</li>
+</ul>
+<p>avg- tBodyGyro-mean()-Z</p>
+<ul>
+<li>Average value of body gyroscope signal in the z direction (time domain)</li>
+</ul>
+<p>avg- tBodyGyroJerk-mean()-X</p>
+<ul>
+<li>Average value of jerk gyroscope signal in the x direction (time domain)</li>
+</ul>
+<p>avg- tBodyGyroJerk-mean()-Y</p>
+<ul>
+<li>Average value of body gyroscope signal in the y direction (time domain)</li>
+</ul>
+<p>avg- tBodyGyroJerk-mean()-Z</p>
+<ul>
+<li>Average value of body gyroscope signal in the z direction (time domain)</li>
+</ul>
+<p>avg- tBodyAccMag-mean()</p>
+<ul>
+<li>Average magintude of body acceleration signal calculated using the Euclidian norm (time domain)</li>
+</ul>
+<p>avg- tGravityAccMag-mean()</p>
+<ul>
+<li>Average magintude of gravity acceleration signal calculated using the Euclidian norm (time domain)</li>
+</ul>
+<p>avg- tBodyAccJerkMag-mean()</p>
+<ul>
+<li>Average magintude of jerk acceleration signal calculated using the Euclidian norm (time domain)</li>
+</ul>
+<p>avg- tBodyGyroMag-mean()</p>
+<ul>
+<li>Average magintude of body gyroscope signal calculated using the Euclidian norm (time domain)</li>
+</ul>
+<p>avg- tBodyGyroJerkMag-mean()</p>
+<ul>
+<li>Average magintude of jerk gyroscope signal calculated using the Euclidian norm (time domain)</li>
+</ul>
+<p>avg- fBodyAcc-mean()-X</p>
+<ul>
+<li>Average value of body acceleration signal in the x direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyAcc-mean()-Y</p>
+<ul>
+<li>Average value of body acceleration signal in the y direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyAcc-mean()-Z</p>
+<ul>
+<li>Average value of body acceleration signal in the z direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyAccJerk-mean()-X</p>
+<ul>
+<li>Average value of jerk acceleration signal in the x direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyAccJerk-mean()-Y</p>
+<ul>
+<li>Average value of jerk acceleration signal in the y direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyAccJerk-mean()-Z</p>
+<ul>
+<li>Average value of jerk acceleration signal in the z direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyGyro-mean()-X</p>
+<ul>
+<li>Average value of body gyroscope signal in the x direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyGyro-mean()-Y</p>
+<ul>
+<li>Average value of body gyroscope signal in the y direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyGyro-mean()-Z</p>
+<ul>
+<li>Average value of body gyroscope signal in the z direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyAccMag-mean()</p>
+<ul>
+<li>Average magintude of body acceleration signal calculated using the Euclidian norm (frequency domain)</li>
+</ul>
+<p>avg- fBodyBodyAccJerkMag-mean()</p>
+<ul>
+<li>Average magintude of jerk acceleration signal calculated using the Euclidian norm (frequency domain)</li>
+</ul>
+<p>avg- fBodyBodyGyroMag-mean()</p>
+<ul>
+<li>Average magintude of body gyroscope signal calculated using the Euclidian norm (frequency domain)</li>
+</ul>
+<p>avg- fBodyBodyGyroJerkMag-mean()</p>
+<ul>
+<li>Average magintude of jerk gyroscope signal calculated using the Euclidian norm (frequency domain)</li>
+</ul>
+<p>avg- tBodyAcc-std()-X</p>
+<ul>
+<li>Average standard deviation of body acceleration signal in the x direction (time domain)</li>
+</ul>
+<p>avg- tBodyAcc-std()-Y</p>
+<ul>
+<li>Average standard deviation of body acceleration signal in the y direction (time domain)</li>
+</ul>
+<p>avg- tBodyAcc-std()-Z</p>
+<ul>
+<li>Average standard deviation of body acceleration signal in the z direction (time domain)</li>
+</ul>
+<p>avg- tGravityAcc-std()-X</p>
+<ul>
+<li>Average standard deviation of gravity acceleration signal in the x direction (time domain)</li>
+</ul>
+<p>avg- tGravityAcc-std()-Y</p>
+<ul>
+<li>Average standard deviation of gravity acceleration signal in the y direction (time domain)</li>
+</ul>
+<p>avg- tGravityAcc-std()-Z</p>
+<ul>
+<li>Average standard deviation of gravity acceleration signal in the z direction (time domain)</li>
+</ul>
+<p>avg- tBodyAccJerk-std()-X</p>
+<ul>
+<li>Average standard deviation of jerk acceleration signal in the x direction (time domain)</li>
+</ul>
+<p>avg- tBodyAccJerk-std()-Y</p>
+<ul>
+<li>Average standard deviation of jerk acceleration signal in the y direction (time domain)</li>
+</ul>
+<p>avg- tBodyAccJerk-std()-Z</p>
+<ul>
+<li>Average standard deviation of jerk acceleration signal in the z direction (time domain)</li>
+</ul>
+<p>avg- tBodyGyro-std()-X</p>
+<ul>
+<li>Average standard deviation of body gyroscope signal in the x direction (time domain)</li>
+</ul>
+<p>avg- tBodyGyro-std()-Y</p>
+<ul>
+<li>Average standard deviation of body gyroscope signal in the y direction (time domain)</li>
+</ul>
+<p>avg- tBodyGyro-std()-Z</p>
+<ul>
+<li>Average standard deviation of body gyroscope signal in the z direction (time domain)</li>
+</ul>
+<p>avg- tBodyGyroJerk-std()-X</p>
+<ul>
+<li>Average standard deviation of jerk gyroscope signal in the x direction (time domain)</li>
+</ul>
+<p>avg- tBodyGyroJerk-std()-Y</p>
+<ul>
+<li>Average standard deviation of body gyroscope signal in the y direction (time domain)</li>
+</ul>
+<p>avg- tBodyGyroJerk-std()-Z</p>
+<ul>
+<li>Average standard deviation of body gyroscope signal in the z direction (time domain)</li>
+</ul>
+<p>avg- tBodyAccMag-std()</p>
+<ul>
+<li>Average standard deviation magintude of body acceleration signal calculated using the Euclidian norm (time domain)</li>
+</ul>
+<p>avg- tGravityAccMag-std()</p>
+<ul>
+<li>Average standard deviation magintude of gravity acceleration signal calculated using the Euclidian norm (time domain)</li>
+</ul>
+<p>avg- tBodyAccJerkMag-std()</p>
+<ul>
+<li>Average standard deviation magintude of jerk acceleration signal calculated using the Euclidian norm (time domain)</li>
+</ul>
+<p>avg- tBodyGyroMag-std()</p>
+<ul>
+<li>Average standard deviation magintude of body gyroscope signal calculated using the Euclidian norm (time domain)</li>
+</ul>
+<p>avg- tBodyGyroJerkMag-std()</p>
+<ul>
+<li>Average standard deviation magintude of jerk gyroscope signal calculated using the Euclidian norm (time domain)</li>
+</ul>
+<p>avg- fBodyAcc-std()-X</p>
+<ul>
+<li>Average standard deviation of body acceleration signal in the x direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyAcc-std()-Y</p>
+<ul>
+<li>Average standard deviation of body acceleration signal in the y direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyAcc-std()-Z</p>
+<ul>
+<li>Average standard deviation of body acceleration signal in the z direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyAccJerk-std()-X</p>
+<ul>
+<li>Average standard deviation of jerk acceleration signal in the x direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyAccJerk-std()-Y</p>
+<ul>
+<li>Average standard deviation of jerk acceleration signal in the y direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyAccJerk-std()-Z</p>
+<ul>
+<li>Average standard deviation of jerk acceleration signal in the z direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyGyro-std()-X</p>
+<ul>
+<li>Average standard deviation of body gyroscope signal in the x direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyGyro-std()-Y</p>
+<ul>
+<li>Average standard deviation of body gyroscope signal in the y direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyGyro-std()-Z</p>
+<ul>
+<li>Average standard deviation of body gyroscope signal in the z direction (frequency domain)</li>
+</ul>
+<p>avg- fBodyAccMag-std()</p>
+<ul>
+<li>Average standard deviation magintude of body acceleration signal calculated using the Euclidian norm (frequency domain)</li>
+</ul>
+<p>avg- fBodyBodyAccJerkMag-std()</p>
+<ul>
+<li>Average standard deviation magintude of jerk acceleration signal calculated using the Euclidian norm (frequency domain)</li>
+</ul>
+<p>avg- fBodyBodyGyroMag-std()</p>
+<ul>
+<li>Average standard deviation magintude of body gyroscope signal calculated using the Euclidian norm (frequency domain)</li>
+</ul>
+<p>avg- fBodyBodyGyroJerkMag-std()</p>
+<ul>
+<li>Average standard deviation magintude of jerk gyroscope signal calculated using the Euclidian norm (frequency domain)</li>
+</ul>
 
 
 </div>
