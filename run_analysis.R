@@ -1,16 +1,18 @@
 run_analysis <- function(){
+
+        library(reshape2)
         
         #Hard-coded data file paths
-        paths <- c(
-                "subject_test" = "UCI HAR Dataset/test/subject_test.txt",
-                "X_test" = "UCI HAR Dataset/test/X_test.txt",
-                "y_test" = "UCI HAR Dataset/test/y_test.txt",
-                "subject_train" = "UCI HAR Dataset/train/subject_train.txt",
-                "X_train" = "UCI HAR Dataset/train/X_train.txt",
-                "y_train" = "UCI HAR Dataset/train/y_train.txt",
-                "features" = "UCI HAR Dataset/features.txt",
-                "activities" = "UCI HAR Dataset/activity_labels.txt"
-                )
+         paths <- c(
+                 "subject_test" = "../../UCI HAR Dataset/test/subject_test.txt",
+                 "X_test" = "../../UCI HAR Dataset/test/X_test.txt",
+                 "y_test" = "../../UCI HAR Dataset/test/y_test.txt",
+                 "subject_train" = "../../UCI HAR Dataset/train/subject_train.txt",
+                 "X_train" = "../../UCI HAR Dataset/train/X_train.txt",
+                 "y_train" = "../../UCI HAR Dataset/train/y_train.txt",
+                 "features" = "../../UCI HAR Dataset/features.txt",
+                 "activities" = "../../UCI HAR Dataset/activity_labels.txt"
+                 )
         
         #load the data file contents into memory
         rawData <- loadData(paths)
@@ -25,9 +27,9 @@ run_analysis <- function(){
         #convert the activity ids into descriptions (WALKING, etc)
         labeledData <- labelActivities(meanAndStds, activityLookup)
         #summarize the data into a single, mean value of each measurement for each subject-action combo
-        summarizeData(labeledData)
+        summarizedData <- summarizeData(labeledData)
         #export data into .csv file
-        write.csv(data,"summarizedData.csv")
+        write.csv(summarizedData,"summarizedData.csv", row.names=FALSE)
 }        
         
 ## open files and load into a list of 6 data
@@ -79,8 +81,12 @@ labelActivities <- function(dataSet,activityLookup){
 ##create summarized, tidy data set with the average values of each variable by activity and subject
 summarizeData <- function(labeledDataSet){
         ##melt labeled data set into "long form", so that each row lists the variable name and value
-        meltData <- melt(labeledData, id=c("subjects", "activityName"), measure.vars=names(labeledData)[3:68])
+        meltData <- melt(labeledDataSet, id=c("subjects", "activityName"), measure.vars=names(labeledDataSet)[3:68])
         
         ##cast melted data back into "wide form" so that each variable name is a column with the mean as value
-        dcast(meltData, subjects + activityName ~ variable, mean)
+        castedData <- dcast(meltData, subjects + activityName ~ variable, mean)
+        
+        ##rename variables to add a "avg-" to the front of each name
+        colnames(castedData)[3:68] <- paste("avg-",colnames(castedData)[3:68],"")
+        castedData
 }
