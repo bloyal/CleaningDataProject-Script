@@ -9,7 +9,7 @@ author: "Brian Loyal"
 run_analysis()
 ```
 
-The script will then extract the raw data from the dataset folder and export the summarized results to a file named "summarizedData.csv". 
+The script will then extract the raw data from the dataset folder and export the summarized results to a file named "summarizedData.txt". 
 
 The script follows these steps to perform the analysis:
 
@@ -20,4 +20,4 @@ The script follows these steps to perform the analysis:
 5. The *selectMeanAndStdData* function uses a column name grep to limit the dataset to only the mean and std value features. It exludes the meanFreq features.
 6. The *labelActivities* function uses the merge() command to perform an inner join between the extracted mean and standard deviation data obtained in step #5 with the activity lookup table from step #3. 
 7. The *summarizeData* function takes in the labeled mean and standard deviation data from step #6 and summarizes it into a tidy, wide data set. This provides the average value of each of the extracted measurements by subject ID and activty name. The resulting columns are renamed by appending "avg- " to the front of each one.
-8. The tidy dataset is saved as a .csv file in the working  directory.
+8. The tidy dataset is saved as a .txt file in the working  directory.
