@@ -58,9 +58,20 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </div>
 
 
-<p><em>run_analysis.R</em> summarizes smartphone accelerometer and gyroscope data collected from 30 individuals. To perform the anaylsis, make sure that the script is located in the same folder as the “UCI HAR Dataset” folder and run it as:</p>
+<p><em>run_analysis.R</em> summarizes smartphone accelerometer and gyroscope data collected from 30 individuals. To perform the anaylsis, update the hard-coded paths to the data set and run the script as:</p>
 <pre><code>run_analysis()</code></pre>
 <p>The script will then extract the raw data from the dataset folder and export the summarized results to a file named “summarizedData.csv”.</p>
+<p>The script follows these steps to perform the analysis:</p>
+<ol style="list-style-type: decimal">
+<li>The <em>loadData</em> function takes in a vector of paths to the source data and uses read.file to load them into a list.</li>
+<li>The <em>getFeatureNames</em> function takes in the path to the features.txt file and saves the feature names to a vector.</li>
+<li>The <em>getActivityNames</em> function takes in the path to the activity_labels.txt file and saves the activity keys and names to a 6 x 2 data frame. This will be used as a lookup table for the merge later on.</li>
+<li>The <em>combineDataSet</em> function takes in the raw data list from step #1 and the feature name vector from step #2 and uses them to organize the test and training data set into a single, large dataframe. Each row of this dataframe represents a single observation, is labeled with the subject ID (column 1) and the activity ID (column 2), and contains 561 feature values.</li>
+<li>The <em>selectMeanAndStdData</em> function uses a column name grep to limit the dataset to only the mean and std value features. It exludes the meanFreq features.</li>
+<li>The <em>labelActivities</em> function uses the merge() command to perform an inner join between the extracted mean and standard deviation data obtained in step #5 with the activity lookup table from step #3.</li>
+<li>The <em>summarizeData</em> function takes in the labeled mean and standard deviation data from step #6 and summarizes it into a tidy, wide data set. This provides the average value of each of the extracted measurements by subject ID and activty name. The resulting columns are renamed by appending “avg-” to the front of each one.</li>
+<li>The tidy dataset is saved as a .csv file in the working directory.</li>
+</ol>
 
 
 </div>
